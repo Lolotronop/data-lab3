@@ -5,10 +5,18 @@ from tensorflow.keras import layers
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 from dataload import load_image_datasets
 
+import dvc.api
+
+params = dvc.api.params_show()['cnn']
+
 IMG_SIZE = (224, 224)
 BATCH_SIZE = 32
 SEED = 123
+if params["seed"] is not None:
+    SEED = params["seed"]
 EPOCHS = 1
+if params["epochs"] is not None:
+    EPOCHS = params["epochs"]
 train_ds, val_ds, eval_ds, class_names = load_image_datasets(
     img_size=IMG_SIZE, batch_size=BATCH_SIZE, seed=SEED
 )

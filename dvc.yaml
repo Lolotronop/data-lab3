@@ -1,0 +1,11 @@
+stages:
+  cnn:
+    cmd: uv run cnn.py
+    deps:
+    - cnn.py
+    - ignored/data
+    params:
+    - cnn.epochs
+    - cnn.seed
+    outs:
+    - ignored/models/cnn.h5

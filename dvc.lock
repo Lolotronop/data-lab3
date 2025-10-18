@@ -1,0 +1,23 @@
+schema: '2.0'
+stages:
+  cnn:
+    cmd: uv run cnn.py
+    deps:
+    - path: cnn.py
+      hash: md5
+      md5: c38ff614b20b0936eebf60cce8c96a5e
+      size: 1571
+    - path: ignored/data
+      hash: md5
+      md5: 840fdb9a23c98313dde45246036c291f.dir
+      size: 452697142
+      nfiles: 5000
+    params:
+      params.yaml:
+        cnn.epochs: 1
+        cnn.seed: 123
+    outs:
+    - path: ignored/models/cnn.h5
+      hash: md5
+      md5: e53d50bda5218404bac0c5373d808f36
+      size: 78243032

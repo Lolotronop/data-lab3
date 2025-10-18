@@ -1,0 +1,3 @@
+cnn:
+  seed: 123
+  epochs: 1
