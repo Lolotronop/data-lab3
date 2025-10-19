@@ -8,14 +8,14 @@ from dataload import load_image_datasets
 
 import dvc.api
 
-params = dvc.api.params_show()['cnn']
+params = dvc.api.params_show()
 
 IMG_SIZE = (224, 224)
 BATCH_SIZE = 32
 SEED = 123
 EPOCHS = 1
-if params["epochs"] is not None:
-    EPOCHS = params["epochs"]
+if params['cnn']["epochs"] is not None:
+    EPOCHS = params['cnn']["epochs"]
 if params["seed"] is not None:
     SEED = params["seed"]
 train_ds, val_ds, eval_ds, class_names = load_image_datasets(

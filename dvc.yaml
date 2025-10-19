@@ -6,7 +6,7 @@ stages:
     - ignored/data
     params:
     - cnn.epochs
-    - cnn.seed
+    - seed
     outs:
     - ignored/models/cnn.h5
     metrics:
@@ -18,7 +18,7 @@ stages:
     - mobilenet.py
     params:
     - mobilenet.epochs
-    - mobilenet.seed
+    - seed
     outs:
     - ignored/models/mobilenet.h5
     metrics:
@@ -30,7 +30,7 @@ stages:
     - resnet.py
     params:
     - resnet.epochs
-    - resnet.seed
+    - seed
     outs:
     - ignored/models/resnet.h5
     metrics:

@@ -5,8 +5,8 @@ stages:
     deps:
     - path: cnn.py
       hash: md5
-      md5: b7d11b1cf3d60cc8b6cb06fca147c5bb
-      size: 1503
+      md5: 0f4792e4a4e9393b817cfcc051935029
+      size: 1510
     - path: ignored/data
       hash: md5
       md5: 840fdb9a23c98313dde45246036c291f.dir
@@ -15,15 +15,15 @@ stages:
     params:
       params.yaml:
         cnn.epochs: 1
-        cnn.seed: 123
+        seed: 123
     outs:
     - path: cnn.json
       hash: md5
-      md5: 905ef9dbbdb92006fd5d87266a679099
-      size: 60
+      md5: 1ddd421c283435d9e487fbc3728fcdf0
+      size: 61
     - path: ignored/models/cnn.h5
       hash: md5
-      md5: 410e776d111e4bbf951866835ab75bdc
+      md5: 881b9338181851eb9b1bf86b505afde5
       size: 78243032
   mobilenet:
     cmd: uv run mobilenet.py
@@ -35,21 +35,21 @@ stages:
       nfiles: 5000
     - path: mobilenet.py
       hash: md5
-      md5: f5ff0568dc4a0aa91fd43cc45022d2ed
-      size: 1433
+      md5: 3a9c755c6b4546f43782bcf2ee065bef
+      size: 1446
     params:
       params.yaml:
         mobilenet.epochs: 1
-        mobilenet.seed: 123
+        seed: 123
     outs:
     - path: ignored/models/mobilenet.h5
       hash: md5
-      md5: 432e1176a5daaba8feef438968326c3b
+      md5: b1e5d0b5ca381af04f5feeb78632c01e
       size: 10388768
     - path: mobilenet.json
       hash: md5
-      md5: b2b12544c7a6c56070ce7adfc65e809a
-      size: 62
+      md5: 94e79544b3aa516bf5ff0c51247c5eee
+      size: 60
   resnet:
     cmd: uv run resnet.py
     deps:
@@ -60,18 +60,18 @@ stages:
       nfiles: 5000
     - path: resnet.py
       hash: md5
-      md5: 6f90a2d959913fcb3981c04a48f53547
-      size: 1416
+      md5: c4f52ea9687dc197de8727c924fef45d
+      size: 1426
     params:
       params.yaml:
         resnet.epochs: 1
-        resnet.seed: 123
+        seed: 123
     outs:
     - path: ignored/models/resnet.h5
       hash: md5
-      md5: 965471a887478faf82f11b16fff8a2ed
+      md5: 658858f07f3bf9859cdda191df1ae149
       size: 96328808
     - path: resnet.json
       hash: md5
-      md5: d82c5e49ed05b674ffcff9630039f459
-      size: 61
+      md5: da9a4a648e1a3dcfd87bb041d298d1d7
+      size: 62
