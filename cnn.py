@@ -1,4 +1,5 @@
 import os
+import json
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -12,11 +13,11 @@ params = dvc.api.params_show()['cnn']
 IMG_SIZE = (224, 224)
 BATCH_SIZE = 32
 SEED = 123
-if params["seed"] is not None:
-    SEED = params["seed"]
 EPOCHS = 1
 if params["epochs"] is not None:
     EPOCHS = params["epochs"]
+if params["seed"] is not None:
+    SEED = params["seed"]
 train_ds, val_ds, eval_ds, class_names = load_image_datasets(
     img_size=IMG_SIZE, batch_size=BATCH_SIZE, seed=SEED
 )
@@ -44,8 +45,6 @@ model.compile(
 )
 model.fit(train_ds, validation_data=val_ds, epochs=EPOCHS)
 
-print("Evaluation:", model.evaluate(eval_ds))
+loss, accuracy = model.evaluate(val_ds)
+json.dump({"loss": loss, "accuracy": accuracy}, open("cnn.json", "w"))
 model.save("./ignored/models/cnn.h5")
-with open("class_names.txt", "w") as f:
-    f.write("\n".join(train_ds.class_names))
-print("Saved model and class names:", train_ds.class_names)
