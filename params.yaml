@@ -1,7 +1,7 @@
 seed: 123
 cnn:
-  epochs: 1
+  epochs: 2
 mobilenet:
-  epochs: 1
+  epochs: 2
 resnet:
-  epochs: 1
+  epochs: 2
