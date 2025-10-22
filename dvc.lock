@@ -14,16 +14,16 @@ stages:
       nfiles: 5000
     params:
       params.yaml:
-        cnn.epochs: 2
+        cnn.epochs: 1
         seed: 123
     outs:
     - path: cnn.json
       hash: md5
-      md5: 6b671b783f5460635a6309ff38f25304
+      md5: 1ddd421c283435d9e487fbc3728fcdf0
       size: 61
     - path: ignored/models/cnn.h5
       hash: md5
-      md5: 7fa582631c62d786586396e681e9cfb4
+      md5: 881b9338181851eb9b1bf86b505afde5
       size: 78243032
   mobilenet:
     cmd: uv run mobilenet.py
@@ -39,17 +39,17 @@ stages:
       size: 1446
     params:
       params.yaml:
-        mobilenet.epochs: 2
+        mobilenet.epochs: 1
         seed: 123
     outs:
     - path: ignored/models/mobilenet.h5
       hash: md5
-      md5: be449c6eaa3b7b2e56861fa7ab524f2c
+      md5: b1e5d0b5ca381af04f5feeb78632c01e
       size: 10388768
     - path: mobilenet.json
       hash: md5
-      md5: 31fe582ec418f801d477dd8a5bc915d1
-      size: 62
+      md5: 94e79544b3aa516bf5ff0c51247c5eee
+      size: 60
   resnet:
     cmd: uv run resnet.py
     deps:
@@ -64,14 +64,14 @@ stages:
       size: 1426
     params:
       params.yaml:
-        resnet.epochs: 2
+        resnet.epochs: 1
         seed: 123
     outs:
     - path: ignored/models/resnet.h5
       hash: md5
-      md5: e59e1d333fabe49fe633be19b5099dd8
+      md5: 658858f07f3bf9859cdda191df1ae149
       size: 96328808
     - path: resnet.json
       hash: md5
-      md5: f7fa95fc1df5e59ee933f1ebf2dab266
+      md5: da9a4a648e1a3dcfd87bb041d298d1d7
       size: 62
